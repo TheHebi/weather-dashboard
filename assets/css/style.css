@@ -1,3 +1,6 @@
-body{
-    background-color: magenta;
+header{
+    background-color: rgb(0,128,128);
+}
+#cityLabel{
+    font-size: large;
 }
