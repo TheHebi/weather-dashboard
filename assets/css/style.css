@@ -1,6 +1,9 @@
 header{
-    background-color: rgb(0,128,128);
+    background-color: teal;
 }
 #cityLabel{
     font-size: large;
+}
+ul {
+    list-style-type: none;
 }

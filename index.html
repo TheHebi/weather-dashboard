@@ -29,81 +29,91 @@
                 type="text"
                 class="form-control"
                 id="inputCity"
-                placeholder="Seattle"
+                placeholder="City Name Here"
               />
-              <button type="submit" class="btn btn-primary" id="submitBtn">Search</button>
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                Search
+              </button>
             </div>
           </form>
           <div class="col-lg-10 col-sm-12">
-              <div class="row">
-            <section id="currentWeather" class="border border-dark col-lg-12">
-              <h2 id="cityName"></h2>
-              <ul id="cityWeather"></ul>
+            <div id="currentBox" class="row">
+              <section id="currentWeather col-lg-12">
+                <h2 id="cityName"></h2>
+                <ul id="cityWeather"></ul>
+              </section>
+            </div>
+
+            <section
+              id="fiveDay"
+              class="row justify-content-between col-lg-12"
+            >
+              <div class="card col-lg-2">
+                <div class="card-body">
+                  <h5 class="card-title">Date</h5>
+                  <p>Weather icon here</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Temp</li>
+                  <li class="list-group-item">Wind</li>
+                  <li class="list-group-item">Humidity</li>
+                </ul>
+              </div>
+              <div class="card col-lg-2">
+                <div class="card-body">
+                  <h5 class="card-title">Date</h5>
+                  <p>Weather icon here</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Temp</li>
+                  <li class="list-group-item">Wind</li>
+                  <li class="list-group-item">Humidity</li>
+                </ul>
+              </div>
+              <div class="card col-lg-2">
+                <div class="card-body">
+                  <h5 class="card-title">Date</h5>
+                  <p>Weather icon here</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Temp</li>
+                  <li class="list-group-item">Wind</li>
+                  <li class="list-group-item">Humidity</li>
+                </ul>
+              </div>
+              <div class="card col-lg-2">
+                <div class="card-body">
+                  <h5 class="card-title">Date</h5>
+                  <p>Weather icon here</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Temp</li>
+                  <li class="list-group-item">Wind</li>
+                  <li class="list-group-item">Humidity</li>
+                </ul>
+              </div>
+              <div class="card col-lg-2">
+                <div class="card-body">
+                  <h5 class="card-title">Date</h5>
+                  <p>Weather icon here</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Temp</li>
+                  <li class="list-group-item">Wind</li>
+                  <li class="list-group-item">Humidity</li>
+                </ul>
+              </div>
             </section>
-        </div>
-        
-            <section id="fiveDay" class="border border-dark row justify-content-between">
-                <div class="card col-lg-2">
-                    <div class="card-body">
-                        <h5 class="card-title">Date</h5>
-                        <p>Weather icon here</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Temp</li>
-                        <li class="list-group-item">Wind</li>
-                        <li class="list-group-item">Humidity</li>
-                    </ul>
-                </div>
-                <div class="card col-lg-2">
-                    <div class="card-body">
-                        <h5 class="card-title">Date</h5>
-                        <p>Weather icon here</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Temp</li>
-                        <li class="list-group-item">Wind</li>
-                        <li class="list-group-item">Humidity</li>
-                    </ul>
-                </div>
-                <div class="card col-lg-2">
-                    <div class="card-body">
-                        <h5 class="card-title">Date</h5>
-                        <p>Weather icon here</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Temp</li>
-                        <li class="list-group-item">Wind</li>
-                        <li class="list-group-item">Humidity</li>
-                    </ul>
-                </div>
-                <div class="card col-lg-2">
-                    <div class="card-body">
-                        <h5 class="card-title">Date</h5>
-                        <p>Weather icon here</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Temp</li>
-                        <li class="list-group-item">Wind</li>
-                        <li class="list-group-item">Humidity</li>
-                    </ul>
-                </div>
-                <div class="card col-lg-2">
-                    <div class="card-body">
-                        <h5 class="card-title">Date</h5>
-                        <p>Weather icon here</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Temp</li>
-                        <li class="list-group-item">Wind</li>
-                        <li class="list-group-item">Humidity</li>
-                    </ul>
-                </div>
-            </section>
-        
-        </div>
+          </div>
         </div>
       </div>
     </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
