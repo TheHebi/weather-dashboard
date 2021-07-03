@@ -5,7 +5,7 @@
 
 // gloabalvars
 var apiKey = `89ccc6e1a0a469bc77ebd2c54993b60a`;
-const history = [];
+let history = [];
 
 function getWeather(event) {
   var cityName = $("#inputCity").val();
@@ -74,7 +74,7 @@ function getWeather(event) {
         });
       $("#inputCity").val("");
     });
-//   appends previous search to page TODO: keep on page post refresh
+//   appends previous search to page
     var oldCity = $("<button>");
     $(oldCity).attr("class", "btn btn-secondary w-100 oldCityBtn");
     $(oldCity).text(`${cityName}`);
@@ -84,7 +84,10 @@ function getWeather(event) {
     $(".formBox").append(oldCity);
 }
 
+// appends buttons to the page for saved searches from local on page reload
 function saveCity(){
+    var storedHistory = localStorage.getItem("cities")
+    history  = JSON.parse(storedHistory)
 
     for (let i = 0; i < history.length; i++) {
         var oldCity = $("<button>");
@@ -97,19 +100,7 @@ function saveCity(){
     }
         
 }
-
-window.onload = function() {
-    var reloading = sessionStorage.getItem("reloading");
-    if (reloading) {
-        sessionStorage.removeItem("reloading");
-        saveCity();
-    }
-}
-
-function reloadP() {
-    sessionStorage.setItem("reloading", "true");
-    document.location.reload();
-}
+saveCity()
 
 var pastWeather = function(event){
     var prevCity = $(event.target).text();
