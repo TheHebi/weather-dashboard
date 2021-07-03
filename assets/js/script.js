@@ -74,37 +74,37 @@ function getWeather(event) {
         });
       $("#inputCity").val("");
     });
-//   appends previous search to page
-    var oldCity = $("<button>");
-    $(oldCity).attr("class", "btn btn-secondary w-100 oldCityBtn");
-    $(oldCity).text(`${cityName}`);
-    $(oldCity).attr("type", "button");
-    $(oldCity).attr("cursor", "pointer");
-    $(oldCity).attr("cities", `${cityName}`)
-    $(".formBox").append(oldCity);
+  //   appends previous search to page
+  var oldCity = $("<button>");
+  $(oldCity).attr("class", "btn btn-secondary w-100 oldCityBtn");
+  $(oldCity).text(`${cityName}`);
+  $(oldCity).attr("type", "button");
+  $(oldCity).attr("cursor", "pointer");
+  $(oldCity).attr("cities", `${cityName}`);
+  $(".formBox").append(oldCity);
 }
 
 // appends buttons to the page for saved searches from local on page reload
-function saveCity(){
-    var storedHistory = localStorage.getItem("cities")
-    history  = JSON.parse(storedHistory)
-
-    for (let i = 0; i < history.length; i++) {
+function saveCity() {
+  var storedHistory = localStorage.getItem("cities");
+  storedHistory = JSON.parse(storedHistory);
+  if (storedHistory !== null) {
+    for (let i = 0; i < storedHistory.length; i++) {
         var oldCity = $("<button>");
         $(oldCity).attr("class", "btn btn-secondary w-100 oldCityBtn");
-        $(oldCity).text(history[i]);
+        $(oldCity).text(storedHistory[i]);
         $(oldCity).attr("type", "button");
         $(oldCity).attr("cursor", "pointer");
-        $(oldCity).attr("cities", history[i])
+        $(oldCity).attr("cities", storedHistory[i]);
         $(".formBox").append(oldCity);
-    }
-        
+      }
+  }
 }
-saveCity()
+saveCity();
 
-var pastWeather = function(event){
-    var prevCity = $(event.target).text();
-    console.log(prevCity)
+var pastWeather = function (event) {
+  var prevCity = $(event.target).text();
+  console.log(prevCity);
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${prevCity}&appid=${apiKey}&units=imperial`
   )
@@ -168,7 +168,7 @@ var pastWeather = function(event){
         });
       $("#inputCity").val("");
     });
-}
+};
 
 $("#submitBtn").on("click", getWeather);
 $(document).on("click", ".oldCityBtn", pastWeather);
