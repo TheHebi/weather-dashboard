@@ -21,7 +21,7 @@
       <div class="container-fluid">
         <div class="row">
           <form class="col-lg-2 col-sm-12">
-            <div class="form-group border border-dark">
+            <div class="form-group border border-dark formBox">
               <label for="inputCity" class="font-weight-bold" id="cityLabel"
                 >Search for a City:</label
               >
@@ -31,7 +31,7 @@
                 id="inputCity"
                 placeholder="City Name Here"
               />
-              <button type="submit" class="btn btn-primary" id="submitBtn">
+              <button type="submit" class="btn btn-primary w-100" id="submitBtn">
                 Search
               </button>
             </div>
@@ -40,7 +40,13 @@
             <div id="currentBox" class="row">
               <section id="currentWeather col-lg-12">
                 <h2 id="cityName"></h2>
-                <ul id="cityWeather"></ul>
+                <img src="" alt="icon" id="currentIcon" class="ml-3 noDisplay">
+                <ul>
+                    <li id="currentTemp"></li>
+                    <li id="currentWind"></li>
+                    <li id="currentHumid"></li>
+                    <li id="currentUv"></li>
+                </ul>
               </section>
             </div>
 
@@ -48,61 +54,56 @@
               id="fiveDay"
               class="row justify-content-between col-lg-12"
             >
-              <div class="card col-lg-2">
-                <div class="card-body">
-                  <h5 class="card-title">Date</h5>
-                  <p>Weather icon here</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp</li>
-                  <li class="list-group-item">Wind</li>
-                  <li class="list-group-item">Humidity</li>
-                </ul>
+              <div class="col-lg-2">
+                  <h5 id="day1"></h5>
+                  <img src="" alt="icon" class="ml-3 noDisplay" id="icon1">
+                  <ul>
+                      <li id="temp1"></li>
+                      <li id="wind1"></li>
+                      <li id="humid1"></li>
+                      <li id="uv1"></li>
+                  </ul>
               </div>
-              <div class="card col-lg-2">
-                <div class="card-body">
-                  <h5 class="card-title">Date</h5>
-                  <p>Weather icon here</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp</li>
-                  <li class="list-group-item">Wind</li>
-                  <li class="list-group-item">Humidity</li>
+              <div class="col-lg-2">
+                <h5  id="day2"></h5>
+                <img src="" alt="icon" class="ml-3 noDisplay" id="icon2">
+                <ul>
+                    <li id="temp2"></li>
+                    <li id="wind2"></li>
+                    <li id="humid2"></li>
+                    <li id="uv2"></li>
                 </ul>
-              </div>
-              <div class="card col-lg-2">
-                <div class="card-body">
-                  <h5 class="card-title">Date</h5>
-                  <p>Weather icon here</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp</li>
-                  <li class="list-group-item">Wind</li>
-                  <li class="list-group-item">Humidity</li>
+            </div>
+            <div class="col-lg-2">
+                <h5 id="day3"></h5>
+                <img src="" alt="icon" class="ml-3 noDisplay" id="icon3">
+                <ul>
+                    <li id="temp3"></li>
+                    <li id="wind3"></li>
+                    <li id="humid3"></li>
+                    <li id="uv3"></li>
                 </ul>
-              </div>
-              <div class="card col-lg-2">
-                <div class="card-body">
-                  <h5 class="card-title">Date</h5>
-                  <p>Weather icon here</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp</li>
-                  <li class="list-group-item">Wind</li>
-                  <li class="list-group-item">Humidity</li>
+            </div>
+            <div class="col-lg-2">
+                <h5 id="day4"></h5>
+                <img src="" alt="icon" class="ml-3 noDisplay" id="icon4">
+                <ul>
+                    <li id="temp4"></li>
+                    <li id="wind4"></li>
+                    <li id="humid4"></li>
+                    <li id="uv4"></li>
                 </ul>
-              </div>
-              <div class="card col-lg-2">
-                <div class="card-body">
-                  <h5 class="card-title">Date</h5>
-                  <p>Weather icon here</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp</li>
-                  <li class="list-group-item">Wind</li>
-                  <li class="list-group-item">Humidity</li>
+            </div>
+            <div class="col-lg-2">
+                <h5 id="day5"></h5>
+                <img src="" alt="icon" class="ml-3 noDisplay" id="icon5">
+                <ul>
+                    <li id="temp5"></li>
+                    <li id="wind5"></li>
+                    <li id="humid5"></li>
+                    <li id="uv5"></li>
                 </ul>
-              </div>
+            </div>
             </section>
           </div>
         </div>
