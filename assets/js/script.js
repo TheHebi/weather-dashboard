@@ -5,7 +5,7 @@
 
 // gloabalvars
 var apiKey = `89ccc6e1a0a469bc77ebd2c54993b60a`;
-console.log(cityName)
+
 function getWeather(event) {
   var cityName = $("#inputCity").val();
   var history = JSON.parse(localStorage.getItem("cities")) || [];
