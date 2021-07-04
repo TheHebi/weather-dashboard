@@ -5,12 +5,27 @@
 
 // gloabalvars
 var apiKey = `89ccc6e1a0a469bc77ebd2c54993b60a`;
-let history = [];
-
+console.log(cityName)
 function getWeather(event) {
   var cityName = $("#inputCity").val();
-  history.push(`${cityName}`);
-  localStorage.setItem("cities", JSON.stringify(history));
+  var history = JSON.parse(localStorage.getItem("cities")) || [];
+  let add = true;
+  for (let i = 0; i < history.length; i++) {
+    if (history[i] === cityName) {
+      add = false;
+    }
+  }
+  if (add) {
+    history.push(`${cityName}`);
+    localStorage.setItem("cities", JSON.stringify(history));
+    var oldCity = $("<button>");
+    $(oldCity).attr("class", "btn btn-secondary w-100 oldCityBtn");
+    $(oldCity).text(`${cityName}`);
+    $(oldCity).attr("type", "button");
+    $(oldCity).attr("cursor", "pointer");
+    $(oldCity).attr("cities", `${cityName}`);
+    $(".formBox").append(oldCity);
+  }
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`
   )
@@ -75,13 +90,13 @@ function getWeather(event) {
       $("#inputCity").val("");
     });
   //   appends previous search to page
-  var oldCity = $("<button>");
-  $(oldCity).attr("class", "btn btn-secondary w-100 oldCityBtn");
-  $(oldCity).text(`${cityName}`);
-  $(oldCity).attr("type", "button");
-  $(oldCity).attr("cursor", "pointer");
-  $(oldCity).attr("cities", `${cityName}`);
-  $(".formBox").append(oldCity);
+  // var oldCity = $("<button>");
+  // $(oldCity).attr("class", "btn btn-secondary w-100 oldCityBtn");
+  // $(oldCity).text(`${cityName}`);
+  // $(oldCity).attr("type", "button");
+  // $(oldCity).attr("cursor", "pointer");
+  // $(oldCity).attr("cities", `${cityName}`);
+  // $(".formBox").append(oldCity);
 }
 
 // appends buttons to the page for saved searches from local on page reload
@@ -90,20 +105,23 @@ function saveCity() {
   storedHistory = JSON.parse(storedHistory);
   if (storedHistory !== null) {
     for (let i = 0; i < storedHistory.length; i++) {
-        var oldCity = $("<button>");
-        $(oldCity).attr("class", "btn btn-secondary w-100 oldCityBtn");
-        $(oldCity).text(storedHistory[i]);
-        $(oldCity).attr("type", "button");
-        $(oldCity).attr("cursor", "pointer");
-        $(oldCity).attr("cities", storedHistory[i]);
-        $(".formBox").append(oldCity);
-      }
+      var oldCity = $("<button>");
+      $(oldCity).attr("class", "btn btn-secondary w-100 oldCityBtn");
+      $(oldCity).text(storedHistory[i]);
+      $(oldCity).attr("type", "button");
+      $(oldCity).attr("cursor", "pointer");
+      $(oldCity).attr("cities", storedHistory[i]);
+      $(".formBox").append(oldCity);
+    }
   }
 }
 saveCity();
 
 var pastWeather = function (event) {
   var prevCity = $(event.target).text();
+  // var history = JSON.parse(localStorage.getItem("cities")) || []
+  // history.push(`${prevCity}`);
+  // localStorage.setItem("cities", JSON.stringify(history));
   console.log(prevCity);
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${prevCity}&appid=${apiKey}&units=imperial`

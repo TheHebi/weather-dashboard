@@ -9,7 +9,20 @@ header{
 }
 ul {
     list-style-type: none;
+    padding: 0;
 }
 .noDisplay{
     display: none;
+}
+.btn:hover{
+    box-shadow: 5px 5px teal;
+}
+.btn{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+@media screen and (max-width: 768px) {
+    .centerSm{
+        text-align: center;
+    }
 }
